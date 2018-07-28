@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lógica de Programação</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Lógica de Programação com Javascript</h1>
+				<h3>Operadores Aritméticos</h3>
+				<label>digite um numero</label><br/>
+				<input id="num1" value=""><br/>
+				<label>digite outro numero</label><br/>
+				<input id="num2" value=""><br/>
+				<button onclick="enviar()">Enviar</button><br/>
+				<label>A média é:</label><br/>
+				<p class="media"></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		function enviar(){
+			var n1 = num1.value;
+			var n1 = parseFloat(n1);
+			var n2 = num2.value;
+			var n2 = parseFloat(n2);
+			var media = (n1 + n2) / 2;
+			document.querySelector('.media').textContent = media;
+		}
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
