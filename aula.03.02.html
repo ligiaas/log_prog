@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lógica de Programação</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Exemplos Loops</h3>
+				<h4>while, do while e for.</h4>
+				<h5><strong>Exemplo loop do while.</strong></h5>
+				<p>loop 'do' garante que o código dentro dele seja executado ao menos uma vez. Antes de cair na condição do while.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Problema</h4>
+				<p>Pedir pro usuário digitar um número e mostrar a tabuada desse número de 1 a 1000.</p>
+				1. pegar numero
+				2. multiplicar numero de 1 a 1000
+				3. mostrar a multiplicação
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<label for="num">Digite um número</label><br/>
+					<input class="form-control" id="num" value=""><br/>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default" onclick="enviar()">Enviar</button><br/>
+				</div>
+				<p class="message"></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		function enviar(){
+			var n = num.value;
+			n = parseInt(n);
+
+			/*
+			// loop 'do' garante que o código dentro dele seja executado ao menos uma vez. Antes de cair na condição do while.
+			var i = 1001;
+			do {
+				nt = n * i;
+				document.write('<p>' + n + ' x ' + i + ' = ' + nt + '</p>');
+				i++;
+			} while(i <= 1000) {
+				document.write('entrou no while');
+			}
+			*/
+
+			for(var i = 1; i <= 100; i++){
+				nt = n * i;
+				document.write('<p>' + n + ' x ' + i + ' = ' + nt + '</p>');
+			}
+			document.write('saiu do loop');
+		}
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

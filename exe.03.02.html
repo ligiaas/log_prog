@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lógica de Programação</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Problema</h3>
+				<p>Para esta tarefa reescreva o código da aula anterior, mas inserindo uma linha divisória sempre que mudar a dezena. Ou seja, entre o 10 e o 11, entre o 20 e o 21 e assim por diante.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				1. pegar numero
+				2. multiplicar numero de 1 a 1000
+				3. mostrar a multiplicação
+				4. mostrar uma linha horizontal entre dezenas
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<label for="num">Digite um número</label><br/>
+					<input class="form-control" id="num" value=""><br/>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-default" onclick="enviar()">Enviar</button><br/>
+				</div>
+				<p class="message"></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		function enviar(){
+			var n = num.value;
+			n = parseInt(n);
+      var i = 1;
+			
+      while(i <= 1000) {
+        nt = n * i;
+        document.write('<p>' + n + ' x ' + i + ' = ' + nt + '</p>');
+        i++;
+        if(i % 10 === 1){
+          document.write('<hr></hr>')
+        }
+			}
+			document.write('saiu do loop');
+		}
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

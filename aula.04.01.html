@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lógica de Programação</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Funções void</h3>
+				<p>Funções que não retornam nenhum valor. São úteis quando queremos reaproveitar código.</p>
+				<button class="btn btn-primary" onclick="mostrarTabuada()">Criar tabuada</button>
+				<button class="btn btn-default" onclick="limparTabuada()">Limpar tabuada</button>
+				<div id="output"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function mostrarTabuada(){
+			//perguntar numero pro usuario
+			var n = prompt('digite numero');
+			//limpar tabuada antes de criar uma nova
+			limparTabuada();
+			//converter numero
+			n = parseInt(n);
+			//criar uma var que servira de indice
+			var i = 1;
+			//enquanto i <= 1000
+				//concatena na variavel mensagem
+			while(i <= 1000){
+				mensagem += n + ' x ' + i + ' = ' + (n*i) + '<br/>';
+				i++;
+			}
+			output.innerHTML = mensagem;
+			//mostra mensagem no output
+		}
+
+		function limparTabuada(){
+			mensagem = '';
+			output.innerHTML = mensagem;
+		}
+		var output = document.querySelector('#output');
+		var mensagem = '';
+
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
