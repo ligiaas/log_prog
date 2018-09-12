@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lógica de Programação</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				1. pegar um número
+				2. converter em número inteiro
+				3. pegar outro número
+				4. converter em número inteiro
+				5. subtrair um pelo outro
+				6. mostrar o resultado com o texto: "a subtração é: "
+				7. multiplicar um pelo outro
+				8. mostrar o resultado com o texto: "a multiplicação é: "
+				9. dividir um pelo outro
+				10. mostrar o resultado com o texto: "a divisão é: "
+				11. somar um pelo outro
+				12. mostrar o resultado com o texto: "a soma é: "
+			</div>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-md-12">
+				<form-group>
+					<label for="num1">digite um número</label>
+					<input type="text" id="num1" class="form-control" autofocus>
+				</form-group>
+				<form-group>
+					<label for="num2">digite outro número</label>
+					<input type="text" id="num2" class="form-control">
+				</form-group>
+				<div class="form-group">
+					<button type="submit" onclick="enviar()" class="btn btn-primary">Enviar</button>
+				</div>
+				<div class="message"></div>
+				<p class="minus"></p>				
+				<p class="div"></p>				
+				<p class="multi"></p>				
+				<p class="sum"></p>				
+			</div>
+		</div>
+	</div>
+	<script>
+
+		function enviar() {
+			var n1 = num1.value;
+			n1 = parseInt(n1);
+			var n2 = num2.value;
+			n2 = parseInt(n2);
+			nMinus = n1 - n2;
+			nMulti = n1 * n2;
+			nDiv = n1 / n2;
+			nSum = n1 + n2;
+
+			var output1 = document.querySelector('.minus').textContent = 'A subtração é: ' + nMinus
+			var output2 = document.querySelector('.div').textContent = 'A divisão é: ' + nDiv;
+			var output3 = document.querySelector('.multi').textContent = 'A multiplicação é: ' + nMulti;
+			var output4 = document.querySelector('.sum').textContent = 'A soma é: ' + nSum;
+		}
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
