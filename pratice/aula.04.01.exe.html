@@ -14,24 +14,34 @@
 					<input type="text" id="num1" class="form-control" autofocus>
 				</div>
 				<div class="form-group">
-					<button type="submit" onclick="enviar()" class="btn btn-primary">Enviar</button>
+					<button class="btn btn-primary" onclick="criarTabuada()">Criar Tabuada</button>
+					<button class="btn btn-default" onclick="limparTabuada()">Limpar Tabuada</button>
 				</div>
-				<div class="message"></div>
+				<div id="printa"></div>
 			</div>
 		</div>
 	</div>
 	<script>
-		function enviar(){
-			var n1 = parseInt(num1.value);
-
-			for(i = 1; i <= 1000; i++){
-				result = n1 * i;
-				document.write( n1 + ' x ' + i + ' = ' + result + '<br/>');
-				if(i % 10 === 0){
-					document.write('<hr></hr>');
-				}
+		function criarTabuada(){
+			var n1 = num1.value;
+			n1 = parseInt(n1);
+			limparTabuada();
+			var i = 1;
+			while(i <= 100){
+				var result = n1*i;
+				message += '<p>' + n1 + ' x ' + i + ' = ' + result + '</p>';
+				i++;
 			}
+			print.innerHTML = message;
 		}
+
+		function limparTabuada(){
+			message = '';
+			print.innerHTML = message;
+		}
+		var print = document.querySelector('#printa');
+		var message = '';
+		
 	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
