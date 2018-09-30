@@ -25,10 +25,10 @@
 		<div class="row justify-content-md-center">
 			<div class="col-md-auto">
 				<div class="form-group">
-					<button class="btn btn-default" onclick="somar(num1, num2)">+</button>
-					<button class="btn btn-default" onclick="diminui(num1, num2)">-</button>
-					<button class="btn btn-default" onclick="multi(num1, num2)">x</button>
-					<button class="btn btn-default" onclick="divi(num1, num2)">/</button>
+					<button class="btn btn-default" onclick="calcular('+', num1, num2)">+</button>
+					<button class="btn btn-default" onclick="calcular('-', num1, num2)">-</button>
+					<button class="btn btn-default" onclick="calcular('*', num1, num2)">x</button>
+					<button class="btn btn-default" onclick="calcular('/', num1, num2)">/</button>
 				</div>
 				<div class="form-group">
 					<label>Resultado: </label>
@@ -38,33 +38,28 @@
 		</div>
 	</div>
 	<script>
-		function somar(num1, num2){
+		function calcular(sign, num1, num2){
 			num1 = parseFloat(num1.value);
 			num2 = parseFloat(num2.value);
-			num1 += num2;
+			switch(sign){
+				case '+':
+					num1 += num2;
+					break;
+				case '-':
+					num1 -= num2;
+					break;
+				case '*':
+					num1 *= num2;
+					break;
+				case '/':
+					num1 /= num2;
+					break;
+			}
 			escreve(num1);
 		}
-		function diminui(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 -= num2;
-			escreve(num1);
-		}
-		function multi(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 *= num2;
-			escreve(num1);
-		}
-		function divi(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 /= num2;
-			escreve(num1);
-		}
+		
 		function escreve(num1) {
-			var print = document.querySelector('#printa');
-			print.innerHTML = num1;
+			var print = document.querySelector('#printa').innerHTML = num1;
 		}
 		
 	</script>

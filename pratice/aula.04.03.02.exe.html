@@ -11,24 +11,23 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label for="num1">digite o primeiro número</label>
-					<input type="text" id="num1" class="form-control" autofocus>
+					<label for="l">digite a largura</label>
+					<input type="text" id="largura" class="form-control" autofocus>
 				</div>
 			</div>
 			<div class="col-6">
 				<div class="form-group">
-					<label for="num2">digite o segundo número</label>
-					<input type="text" id="num2" class="form-control">
+					<label for="a">digite a altura</label>
+					<input type="text" id="altura" class="form-control">
 				</div>
 			</div>
 		</div>
 		<div class="row justify-content-md-center">
 			<div class="col-md-auto">
+				<button class="btn btn-primary" onclick="calculaArea(largura, altura)">Enviar</button>
 				<div class="form-group">
-					<button class="btn btn-default" onclick="somar(num1, num2)">+</button>
-					<button class="btn btn-default" onclick="diminui(num1, num2)">-</button>
-					<button class="btn btn-default" onclick="multi(num1, num2)">x</button>
-					<button class="btn btn-default" onclick="divi(num1, num2)">/</button>
+					<button class="btn btn-default" onclick="mostrarTela()">Mostrar na tela área total</button>
+					<button class="btn btn-default" onclick="mostrarAlert()">Mostrar no alert área total</button>
 				</div>
 				<div class="form-group">
 					<label>Resultado: </label>
@@ -38,33 +37,21 @@
 		</div>
 	</div>
 	<script>
-		function somar(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 += num2;
-			escreve(num1);
+		function calculaArea(largura, altura){
+			var l = parseFloat(largura.value);
+			var a = parseFloat(altura.value);
+			return l * a;
 		}
-		function diminui(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 -= num2;
-			escreve(num1);
-		}
-		function multi(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 *= num2;
-			escreve(num1);
-		}
-		function divi(num1, num2){
-			num1 = parseFloat(num1.value);
-			num2 = parseFloat(num2.value);
-			num1 /= num2;
-			escreve(num1);
-		}
-		function escreve(num1) {
+		
+		function mostrarTela(){
+			var area = calculaArea(largura, altura);
 			var print = document.querySelector('#printa');
-			print.innerHTML = num1;
+			print.innerHTML = area;
+		}
+
+		function mostrarAlert(){
+			var area = calculaArea(largura, altura);
+			alert(area);
 		}
 		
 	</script>
